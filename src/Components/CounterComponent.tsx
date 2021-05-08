@@ -5,7 +5,9 @@ export const CounterComponent = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    console.log('effect is called');
+    setTimeout(() => {
+      setCount(101);
+    }, 900);
   }, []);
 
   return (
