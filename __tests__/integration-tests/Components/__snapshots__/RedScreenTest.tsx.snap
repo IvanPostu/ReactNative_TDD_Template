@@ -5,6 +5,7 @@ exports[`Red Screen test 1`] = `
   style={
     Object {
       "backgroundColor": "red",
+      "height": 200,
     }
   }
 />
