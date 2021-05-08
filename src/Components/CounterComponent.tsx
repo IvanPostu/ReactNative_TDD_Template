@@ -1,8 +1,12 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 
 export const CounterComponent = () => {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log('effect is called');
+  }, []);
 
   return (
     <View style={styles.root}>

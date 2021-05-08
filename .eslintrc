@@ -11,5 +11,8 @@
     "no-console": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "prettier/prettier": "warn"
+  },
+  "env": {
+    "jest": true
   }
 }

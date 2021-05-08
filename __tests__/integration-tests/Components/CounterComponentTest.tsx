@@ -4,6 +4,8 @@ import {create, act} from 'react-test-renderer';
 
 const tree = create(<CounterComponent />);
 
+jest.runAllTimers();
+
 describe('CounterComponent test', () => {
   test('CounterComponent snapshot', () => {
     expect(tree).toMatchSnapshot();
