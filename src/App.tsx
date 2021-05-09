@@ -16,10 +16,11 @@ import {
   ScrollView,
   StatusBar,
   useColorScheme,
-  View,
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import CounterContainer from './Components/CounterContainer';
+import {ReduxWrapper} from './Redux';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -29,14 +30,16 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <CounterComponent />
-      </ScrollView>
-    </SafeAreaView>
+    <ReduxWrapper>
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={backgroundStyle}>
+          <CounterContainer />
+        </ScrollView>
+      </SafeAreaView>
+    </ReduxWrapper>
   );
 };
 

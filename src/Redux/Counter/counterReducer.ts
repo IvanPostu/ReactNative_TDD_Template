@@ -27,7 +27,7 @@ export const counterReducer: Reducer<
     case T.DECREMENT:
       return {
         ...state,
-        counter: state.counter + 1,
+        counter: state.counter - 1,
       };
 
     case T.SET_ZERO:
