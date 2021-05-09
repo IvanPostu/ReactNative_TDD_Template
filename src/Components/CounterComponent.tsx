@@ -5,9 +5,13 @@ export const CounterComponent = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeout1 = setTimeout(() => {
       setCount(101);
     }, 900);
+
+    return () => {
+      clearTimeout(timeout1);
+    };
   }, []);
 
   return (

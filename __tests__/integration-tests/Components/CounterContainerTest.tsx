@@ -39,5 +39,7 @@ describe('CounterContainer test', () => {
     await fireEvent.changeText(inputValue, '1022');
     fireEvent.press(setValueButton);
     expect(outputValue.props.children).toEqual('1022');
+
+    expect(store.getState().counterReducer.counter).toBe(1022);
   });
 });

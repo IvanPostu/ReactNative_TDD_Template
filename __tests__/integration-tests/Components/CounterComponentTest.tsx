@@ -1,37 +1,36 @@
-import {CounterComponent} from '@/Components/CounterComponent';
+import 'react-native';
 import React from 'react';
-import {create, act, ReactTestRenderer} from 'react-test-renderer';
+import {fireEvent, render, act} from '@testing-library/react-native';
+import {CounterComponent} from '@/Components/CounterComponent';
 
 describe('CounterComponent test', () => {
-  let tree: ReactTestRenderer;
-
-  beforeEach(() => {
-    tree = create(<CounterComponent />);
-  });
-
   test('CounterComponent snapshot', () => {
+    const tree = render(<CounterComponent />);
     expect(tree).toMatchSnapshot();
   });
 
   test('Increment button click test', () => {
-    const incrButton = tree.root.findByProps({testID: 'incrBtn'}).props;
+    const rendererComponent = render(<CounterComponent />);
+    const incrButton = rendererComponent.getByTestId('incrBtn');
 
-    act(() => incrButton.onPress());
-    act(() => incrButton.onPress());
-    act(() => incrButton.onPress());
-    act(() => incrButton.onPress());
+    fireEvent.press(incrButton);
+    fireEvent.press(incrButton);
+    fireEvent.press(incrButton);
+    fireEvent.press(incrButton);
 
-    const text = tree.root.findByProps({testID: 'out'}).props;
+    const outTextElement = rendererComponent.getByTestId('out');
 
-    expect(text.children).toEqual(4);
+    expect(outTextElement.props.children).toEqual(4);
   });
 
   test('Timeout is called', () => {
+    const rendererComponent = render(<CounterComponent />);
+    const outTextElement = rendererComponent.getByTestId('out');
+
     act(() => {
       jest.runAllTimers();
     });
 
-    const text = tree.root.findByProps({testID: 'out'}).props;
-    expect(text.children).toEqual(101);
+    expect(outTextElement.props.children).toEqual(101);
   });
 });

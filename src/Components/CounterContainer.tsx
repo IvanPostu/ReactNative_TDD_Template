@@ -1,6 +1,6 @@
 import {ReduxGlobalStateType} from '@/Redux';
 import React, {ReactElement, useState} from 'react';
-import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Button, Image, StyleSheet, Text, TextInput, View} from 'react-native';
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch} from 'redux';
 import * as actionCreators from '@/Redux/Counter/actionCreators';
@@ -59,6 +59,7 @@ export const CounterContainer = (
           title="qq"
           transparent={false}
         />
+        <Image source={require('@/Assets/cat.png')} />
       </View>
     </View>
   );
