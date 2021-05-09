@@ -1,6 +1,6 @@
 # React Native TDD Template
 
-### A simple project that uses unit and integration tests.
+### A simple react-native project that uses unit and integration tests.
 
 ## Goals:
 
@@ -13,4 +13,22 @@
 - [x] Integration tests for async functionality.
 - [ ] Integration tests for async actions using redux-saga.
 
+### Run tests
 
+```bash
+$ npm run test -- --verbose --coverage
+```
+
+### Run application
+
+```bash
+$ npm run start
+```
+
+```bash
+$ npm run android
+```
+
+## Report:
+
+![](./docs/report.png)

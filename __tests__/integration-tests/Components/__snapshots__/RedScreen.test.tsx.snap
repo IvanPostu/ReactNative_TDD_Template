@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Red Screen test 1`] = `
+exports[`RedScreen component test Renders correctly (take snapshot) 1`] = `
 <View
   style={
     Object {

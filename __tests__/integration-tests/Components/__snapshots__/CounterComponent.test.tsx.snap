@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CounterComponent test CounterComponent snapshot 1`] = `
+exports[`CounterComponent component test Renders correctly (take snapshot) 1`] = `
 <View
   style={
     Object {

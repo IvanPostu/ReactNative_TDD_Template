@@ -13,7 +13,17 @@ const rootReducer = combineReducers({
 });
 const store = createStore(rootReducer, {counterReducer: {counter: 10}});
 
-describe('CounterContainer test', () => {
+describe('CounterContainer component test', () => {
+  test('Renders correctly (take snapshot)', () => {
+    const tree = render(
+      <Provider store={store}>
+        <CounterContainer />
+      </Provider>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
   test('CounterContainer set count value correctly', async () => {
     const {getByTestId} = render(
       <Provider store={store}>

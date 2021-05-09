@@ -1,9 +1,10 @@
 import React from 'react';
-import {create} from 'react-test-renderer';
 import RedScreen from '@/Components/RedScreen';
+import {render} from '@testing-library/react-native';
 
-const tree = create(<RedScreen />);
-
-test('Red Screen test', () => {
-  expect(tree).toMatchSnapshot();
+describe('RedScreen component test', () => {
+  test('Renders correctly (take snapshot)', () => {
+    const tree = render(<RedScreen />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

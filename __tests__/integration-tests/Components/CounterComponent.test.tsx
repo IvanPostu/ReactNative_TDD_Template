@@ -3,8 +3,8 @@ import React from 'react';
 import {fireEvent, render, act} from '@testing-library/react-native';
 import {CounterComponent} from '@/Components/CounterComponent';
 
-describe('CounterComponent test', () => {
-  test('CounterComponent snapshot', () => {
+describe('CounterComponent component test', () => {
+  test('Renders correctly (take snapshot)', () => {
     const tree = render(<CounterComponent />);
     expect(tree).toMatchSnapshot();
   });
@@ -23,7 +23,7 @@ describe('CounterComponent test', () => {
     expect(outTextElement.props.children).toEqual(4);
   });
 
-  test('Timeout is called', () => {
+  test('onTimeout callback is called', () => {
     const rendererComponent = render(<CounterComponent />);
     const outTextElement = rendererComponent.getByTestId('out');
 

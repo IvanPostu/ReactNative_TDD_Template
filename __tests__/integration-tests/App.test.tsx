@@ -2,10 +2,11 @@ import 'react-native';
 import React from 'react';
 import App from '@/App';
 
-import renderer from 'react-test-renderer';
+import {render} from '@testing-library/react-native';
 
 describe('App component test', () => {
-  test('renders correctly', () => {
-    renderer.create(<App />);
+  test('Renders correctly (take snapshot)', () => {
+    const tree = render(<App />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
