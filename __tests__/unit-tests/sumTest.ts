@@ -1,9 +1,9 @@
-import * as dependencies from '@/lazyFunctionExample';
+import * as dependencies from '@/Utils/lazyFunctionExample';
 
-import {sum} from '@/sum';
+import {sum} from '@/Utils/sum';
 
 describe('sum module test', () => {
-  test('q', () => {
+  test('spy (mock) example', () => {
     const spy = jest
       .spyOn(dependencies, 'lazyFunction')
       .mockImplementation(() => 2);
